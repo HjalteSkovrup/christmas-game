@@ -20,7 +20,7 @@
 Add these environment variables in Railway dashboard:
 
 ```
-DATABASE_URL=postgresql://neondb_owner:npg_5ymK0rWuVkAn@ep-billowing-glitter-a9ld3sbm-pooler.gwc.azure.neon.tech/neondb?sslmode=require&channel_binding=require
+DATABASE_URL=
 NODE_ENV=production
 CORS_ORIGIN=https://your-vercel-app.vercel.app
 PORT=5000

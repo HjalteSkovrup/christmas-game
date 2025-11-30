@@ -208,7 +208,7 @@ NEXT PHASE 🔄
 
 LAUNCH PHASE 🚀
 ├─ Deploy to Vercel (frontend)
-├─ Deploy to Railway (backend)
+├─ Deploy to Render (backend)
 ├─ Share URL with employees
 └─ December 1st: Puzzles go live! 🎄
 ```

@@ -13,7 +13,7 @@ A 24-day Christmas puzzle game platform with:
 - Frontend: React + Vite
 - Backend: Node.js + Express.js
 - Database: PostgreSQL (Neon) - stores 24 answers, no puzzle descriptions
-- Hosting: Vercel + Railway + Neon (all free tier)
+- Hosting: Vercel + Render + Neon (all free tier)
 
 ## Development Progress
 

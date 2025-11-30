@@ -114,7 +114,7 @@ christmas-game/
 
 ### Later (This Week)
 1. Add security features (bcrypt, rate limiting)
-2. Deploy to Vercel + Railway
+2. Deploy to Vercel + Render
 3. Share with employees
 4. Go live December 1st!
 
@@ -176,7 +176,7 @@ curl http://localhost:5000/api/health  # Check if backend works
 
 ### Free Hosting Docs
 - **Vercel** (Frontend): https://vercel.com/docs
-- **Railway** (Backend): https://docs.railway.app/
+- **Render** (Backend): https://docs.render.com/
 - **Neon** (Database): https://neon.tech/docs/
 
 ---
@@ -224,7 +224,7 @@ curl http://localhost:5000/api/health  # Check if backend works
 
 ### 🚀 Phase 5: Deployment
 - Deploy to Vercel (frontend)
-- Deploy to Railway (backend)
+- Deploy to Render (backend)
 - Share with employees
 - December 1st: GO LIVE! 🎄
 

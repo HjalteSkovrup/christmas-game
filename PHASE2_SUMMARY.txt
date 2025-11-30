@@ -163,7 +163,7 @@
 │                                                                           │
 │  Phase 5: Deployment (Before Dec 1)                                    │
 │    ⏳ Deploy frontend to Vercel (free)                                   │
-│    ⏳ Deploy backend to Railway (free)                                   │
+│    ⏳ Deploy backend to Render (free tier)                             │
 │    ⏳ Share with employees                                                │
 │    ⏳ GO LIVE! 🎄                                                        │
 │                                                                           │

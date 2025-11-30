@@ -7,7 +7,7 @@ A secure, real-time puzzle game platform where participants solve 24 logical puz
 - **Frontend**: React with Vite
 - **Backend**: Node.js + Express.js
 - **Database**: PostgreSQL (Neon)
-- **Hosting**: Vercel (frontend) + Railway (backend) + Neon (database)
+- **Hosting**: Vercel (frontend) + Render (backend) + Neon (database)
 
 ## 🔐 Security Features
 
