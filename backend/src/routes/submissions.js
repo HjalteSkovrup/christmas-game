@@ -62,7 +62,18 @@ router.post('/', async (req, res) => {
       return res.status(403).json({ error: 'Puzzle not yet unlocked' });
     }
 
-    // Allow multiple submissions per puzzle - users can try as many times as they want
+    // Check if user already submitted a correct answer for this puzzle
+    const existingCorrectSubmission = await query(
+      `SELECT id FROM submissions WHERE participant_id = $1 AND puzzle_id = $2 AND is_correct = true`,
+      [participantDbId, puzzle.id]
+    );
+
+    if (existingCorrectSubmission.rows.length > 0) {
+      await logAudit(participantDbId, 'DUPLICATE_CORRECT', { puzzle_day: puzzle.day });
+      return res.status(400).json({ error: 'You already submitted a correct answer for this puzzle' });
+    }
+
+    // Allow multiple submissions per puzzle - users can try as many times as they want (until correct)
     // Validate answer (case-insensitive)
     const isCorrect = answer.toLowerCase().trim() === puzzle.answer.toLowerCase().trim();
 
