@@ -274,7 +274,7 @@ describe('API with Mocked Database', () => {
         });
 
       expect(response.status).toBe(400);
-      expect(response.body.error).toContain('already submitted a correct answer');
+      expect(response.body.error).toContain('You already submitted a correct answer for this puzzle');
     });
 
     test('Case-insensitive answer matching works', async () => {
