@@ -1,0 +1,29 @@
+{
+  "name": "christmas-game-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "migrate": "node src/db/migrations.js",
+    "seed": "node src/db/seed.js",
+    "seed-answers": "node src/db/seed-answers.js",
+    "add-test-day": "node src/db/add-test-day.js",
+    "setup-db": "node src/db/migrations.js && node src/db/seed-answers.js && node src/db/add-test-day.js",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "supertest": "^6.3.4",
+    "vitest": "^4.0.14"
+  }
+}

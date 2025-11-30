@@ -1,0 +1,27 @@
+// Static Christmas jokes for each day
+export const christmasJokes = {
+  1: "Why is Christmas just like a day at work? You do all the work and the fat guy in the suit gets all the credit!",
+  2: "What do snowmen eat for breakfast? Frosted Flakes!",
+  3: "Why is the Christmas tree just like a tailor? It's all about the needles!",
+  4: "What do you call an obnoxious reindeer? Rude-olph!",
+  5: "Why did Santa go to music school? Because he wanted to improve his elf!",
+  6: "How does Christmas Day differ from a day at work? At Christmas you actually want a silent knight!",
+  7: "What's the best Christmas present? A broken drum – you just can't beat it!",
+  8: "Why is Christmas just like a day at the office? Same faces, but different presents!",
+  9: "What do the elves do after Santa checks the sleigh twice? They jingle all the way!",
+  10: "Why did the gingerbread man go to the doctor? Because he felt crumbly!",
+  11: "What do you get when you cross a snowman with a vampire? Frostbite!",
+  12: "How many letters are in the Christmas alphabet? 25, because Noel!",
+  13: "What's white and fluffy like a cloud? Snow!",
+  14: "Why did the Christmas stocking get a job? It needed to stay on top of things!",
+  15: "What do you call a blind reindeer? No-eye-deer!",
+  16: "Why is Christmas carol like a vegetable? Turnip the beet!",
+  17: "How does Rudolph know when Christmas is coming? He looks at the calendar!",
+  18: "What do Santa's helpers read? The elf-abet!",
+  19: "Why did they let the Christmas tree stay inside? Because it was on its best behavior!",
+  20: "What's the difference between Christmas and marriage? Christmas only happens once a year!",
+  21: "Why do Christmas trees have so many ornaments? Because they're over-decorated!",
+  22: "What did one Christmas light say to the other? I'm glowing crazy for you!",
+  23: "Why is Christmas better than Thanksgiving? You don't have to eat squash!",
+  24: "What's the most popular Christmas wine? Anyway, I really wanna be around you for the holidays!"
+};

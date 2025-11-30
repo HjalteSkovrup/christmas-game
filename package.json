@@ -1,0 +1,24 @@
+{
+  "name": "christmas-game",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "24-day Christmas puzzle game with secure ID+passkey authentication",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev": "concurrently \"cd frontend && npm run dev\" \"cd backend && npm run dev\"",
+    "start": "node start-clean.js",
+    "build": "npm run build -w frontend && npm run build -w backend",
+    "start-server": "cd backend && npm start",
+    "setup-db": "node setup-db.mjs",
+    "migrate": "cd backend && npm run migrate",
+    "seed": "cd backend && npm run seed"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

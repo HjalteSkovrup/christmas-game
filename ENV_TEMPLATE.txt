@@ -1,0 +1,19 @@
+# 🎄 COPY & PASTE TEMPLATE
+# Instructions:
+# 1. Get your connection string from https://console.neon.tech
+# 2. Replace YOUR_CONNECTION_STRING with actual value
+# 3. Save as backend/.env and frontend/.env
+# 4. Run: npm run migrate
+
+# ========== BACKEND/.ENV ==========
+DATABASE_URL=postgresql://YOUR_USERNAME:YOUR_PASSWORD@YOUR_HOST/neondb?sslmode=require
+PORT=5000
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:5173
+
+# ========== FRONTEND/.ENV ==========
+VITE_API_URL=http://localhost:5000/api
+
+# ========== EXAMPLE (DO NOT USE) ==========
+# DATABASE_URL=postgresql://user:abc123@ep-xyz.us-east-1.neon.tech/neondb?sslmode=require
+# This is NOT a real connection string, get yours from Neon dashboard
