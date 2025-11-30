@@ -52,13 +52,26 @@ vi.mock('../src/db/pool.js', () => {
     }
 
     // GET puzzle for submission
+    if (text.includes('SELECT id, answer, day, unlock_time FROM puzzles WHERE day = $1')) {
+      const puzzle = mockPuzzles.find(p => p.day === params[0]);
+      if (!puzzle) return { rows: [] };
+      return { rows: [puzzle] };
+    }
+
+    // GET puzzle for submission (by ID)
     if (text.includes('SELECT id, answer, day, unlock_time FROM puzzles WHERE id = $1')) {
       const puzzle = mockPuzzles.find(p => p.id === params[0]);
       if (!puzzle) return { rows: [] };
       return { rows: [puzzle] };
     }
 
-    // CHECK existing submission
+    // CHECK existing correct submission (new check for duplicate correct answers)
+    if (text.includes('SELECT id FROM submissions WHERE participant_id = $1 AND puzzle_id = $2 AND is_correct = true')) {
+      const submission = mockSubmissions.find(s => s.participant_id === params[0] && s.puzzle_id === params[1] && s.is_correct === true);
+      return { rows: submission ? [{ id: submission.id }] : [] };
+    }
+
+    // CHECK existing submission (for other checks)
     if (text.includes('SELECT id FROM submissions WHERE participant_id = $1 AND puzzle_id = $2')) {
       const submission = mockSubmissions.find(s => s.participant_id === params[0] && s.puzzle_id === params[1]);
       return { rows: submission ? [{ id: submission.id }] : [] };
@@ -261,7 +274,7 @@ describe('API with Mocked Database', () => {
         });
 
       expect(response.status).toBe(400);
-      expect(response.body.error).toContain('Already submitted');
+      expect(response.body.error).toContain('already submitted a correct answer');
     });
 
     test('Case-insensitive answer matching works', async () => {
