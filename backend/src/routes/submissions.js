@@ -55,11 +55,23 @@ router.post('/', async (req, res) => {
 
     const puzzle = puzzleResult.rows[0];
 
-    // Check if puzzle is unlocked (Danish timezone)
-    const now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Copenhagen' });
-    if (new Date(puzzle.unlock_time) > new Date(now)) {
+    // Check if puzzle is unlocked and still active (Danish timezone)
+    const cphTime = new Date().toLocaleString('en-US', { timeZone: 'Europe/Copenhagen' });
+    const cphDate = new Date(cphTime);
+    const unlockTime = new Date(puzzle.unlock_time);
+    
+    // Check if puzzle hasn't unlocked yet
+    if (unlockTime > cphDate) {
       await logAudit(participantDbId, 'EARLY_SUBMISSION', { puzzle_day: puzzle.day });
       return res.status(403).json({ error: 'Puzzle not yet unlocked' });
+    }
+
+    // Check if puzzle day has ended (24 hours after unlock)
+    const nextDay = new Date(unlockTime);
+    nextDay.setDate(nextDay.getDate() + 1);
+    if (cphDate >= nextDay) {
+      await logAudit(participantDbId, 'LATE_SUBMISSION', { puzzle_day: puzzle.day });
+      return res.status(403).json({ error: 'This puzzle is no longer available. The day has ended.' });
     }
 
     // Check if user already submitted a correct answer for this puzzle
